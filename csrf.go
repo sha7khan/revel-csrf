@@ -92,7 +92,7 @@ var CSRFFilter = func(c *revel.Controller, fc []revel.Filter) {
 			c.Result = c.Forbidden(errBadToken)
 			return
 		}
-		revel.TRACE.Println("REVEL-CSRF: Token successfully checked.")
+		revel.AppLog.Info("REVEL-CSRF: Token successfully checked.")
 	}
 
 	fc[0](c, fc[1:])
